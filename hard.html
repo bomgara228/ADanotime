@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            border:1px solid black;
+            font-size: 1rem;
+        }
+        .ind {
+            background-color: rgb(200, 200, 200);
+        }
+        .ya {
+            border: 1px solid black;
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        /*1 */
+        /* function Calculator(x,y){
+            this.x = x;
+            this.y = y;
+        }
+
+        Calculator.prototype.sum = function(){
+            console.log("Сумма: " + (this.x + this.y));
+        }
+        Calculator.prototype.sub = function(){
+            console.log("Разность: " + (this.x - this.y));
+        }
+        Calculator.prototype.mul = function(){
+            console.log("Произведение: " + (this.x * this.y));
+        }
+        Calculator.prototype.div= function(){
+            console.log("Деление: " + (this.x / this.y));
+        }
+        let calc1 = new Calculator(5, 3);
+        console.log(calc1);
+        calc1.sum();
+        calc1.sub();
+        calc1.mul();
+        calc1.div(); */
+
+        /* 2 */
+        /* function Person(name, age, sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        let persons = [];
+        persons[0] = new Person('Олег', 24, 'м');
+        persons[1] = new Person('Владимир', 36, 'м');
+        persons[2] = new Person('Евгенья', 25, 'ж');
+
+        Person.prototype.tellAboutYou = function(){
+            if (this.sex == 'м'){
+                this.sex = 'мужчина';
+            } else {
+                this.sex = 'женщина';
+            }
+            console.log(`Здравствуйте, меня зовут ${this.name}, я - ${this.sex}, мне: ${this.age}`);
+        }
+        for(let obj of persons){
+            obj.tellAboutYou();
+        } */
+
+        /* 3 */
+        /* function getRC() {
+            return Math.floor(Math.random() * 256);
+        }
+        function Point(x, y){
+            this.x = `${x}px`;
+            this.y = `${y}px`;
+            this.color = `rgb(${getRC()},${getRC()},${getRC()})`;
+        }
+
+        Point.prototype.createEl = function(){
+            let el = document.createElement('div');
+            el.style.borderRadius = '50%';
+            el.style.width = '30px';
+            el.style.height = '30px';
+            el.style.backgroundColor = this.color;
+            el.style.left = this.x;
+            el.style.top = this.y;
+            document.body.append(el);
+        }
+        for (let i = 700; i<= 1000; i++){
+            let el = new Point(i, 100);
+            el.createEl();
+        } */
+
+        /* 4 */
+        function ModalWidnow(x, y, width, name, inname){
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.name = name;
+            this.inname = inname;
+        }
+        ModalWidnow.prototype.createWindow = function(){
+            let el = document.createElement('div');
+            el.style.left = this.x;
+            el.style.top = this.y;
+            el.style.width = this.width;
+            el.append(name);
+            el.classList.add('.ya');
+            
+
+            el.append('x');
+            el.classList.add('ind');
+            let int = document.querySelector('.ind');
+            int.append(this.inname);
+            document.body.append(el);
+        }
+        let mod1 = new ModalWidnow(100,100, 400, 'AAAAAA', 'lorem что-то там');
+        mod1.createWindow();
+    </script>
+</body>
+</html>
